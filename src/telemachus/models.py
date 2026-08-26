@@ -107,7 +107,7 @@ class HFDatasetMetadata:
         )
 
 
-# Generated tests
+# Tests
 
 if __name__ == "__main__":
     print("🚀 Running local dataclass validation tests...")

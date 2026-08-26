@@ -27,7 +27,7 @@ The baseline uses only semantic similarity. A second version adds a small bonus 
 
 The clearest improvement was on text-classification queries, where semantic search retrieved related NLP datasets that were not actually classification datasets.
 
-This is a very, very small experiment, mostly meant for my own practice. If I dare infer anything it's that embeddings are good at finding semantically related candidates (duh); structured metadata can help distinguish which candidates are actually suitable.
+This is intentionally a small experiment, so the results should not be treated as a robust benchmark. Within this constructed candidate corpus, however, adding structured task metadata improved ranking over semantic similarity alone. The results illustrate a useful retrieval pattern: embeddings are effective for candidate generation, while structured metadata can help distinguish semantically related candidates from those that are actually suitable for the requested task.
 
 ## Evaluation
 
@@ -54,6 +54,6 @@ Saved experiment outputs are in `results/`.
 
 I ran this on my x86_64 intel mac, meaning I had to pin torch and numpy to older versions.
 
-This is a small prototype, not a production benchmark. The corpus and query set are limited, relevance labels are manual, and the reranking weight is hand-selected. etc. 
+This is a small prototype, not a production benchmark. The corpus and query set are limited, relevance labels are manual, and the reranking weight is hand-selected. 
 
 Possible extensions include learned reranking, additional metadata signals, hybrid retrieval, and knowledge-graph relationships.
