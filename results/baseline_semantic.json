@@ -1,0 +1,273 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L12-v2",
+  "top_k": 5,
+  "queries": [
+    {
+      "query": "dataset for training robots to perform physical manipulation tasks",
+      "relevant_ids": [
+        "InternRobotics/InternData-A1",
+        "XDOF/ABC-130k",
+        "cadene/droid",
+        "genrobot2025/10Kh-RealOmin-OpenData"
+      ],
+      "precision_at_5": 0.8,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "XDOF/ABC-130k",
+          "score": 0.6195085048675537,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "dataset_id": "cadene/droid",
+          "score": 0.5948876738548279,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "dataset_id": "InternRobotics/InternData-A1",
+          "score": 0.559735894203186,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "dataset_id": "genrobot2025/10Kh-RealOmin-OpenData",
+          "score": 0.4522665739059448,
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "dataset_id": "aps/super_glue",
+          "score": 0.380872517824173,
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "query": "English dataset for training a text classification model",
+      "relevant_ids": [
+        "aps/super_glue",
+        "nyu-mll/glue",
+        "stanfordnlp/imdb"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.3333333333333333,
+      "reciprocal_rank": 0.5,
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "TIGER-Lab/MMLU-Pro",
+          "score": 0.44300350546836853,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "dataset_id": "nyu-mll/glue",
+          "score": 0.43852949142456055,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "dataset_id": "mratanusarkar/Indian-Laws",
+          "score": 0.4197559356689453,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "dataset_id": "lavita/medical-qa-datasets",
+          "score": 0.41519805788993835,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "dataset_id": "allenai/ai2_arc",
+          "score": 0.3906457722187042,
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "query": "English dataset for training a question-answering model",
+      "relevant_ids": [
+        "allenai/ai2_arc",
+        "rajpurkar/squad"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "rajpurkar/squad",
+          "score": 0.5904263257980347,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "dataset_id": "allenai/ai2_arc",
+          "score": 0.5573438405990601,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "dataset_id": "nyu-mll/glue",
+          "score": 0.5256675481796265,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "dataset_id": "TIGER-Lab/MMLU-Pro",
+          "score": 0.5140289068222046,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "dataset_id": "lavita/medical-qa-datasets",
+          "score": 0.48890066146850586,
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "query": "English legal text corpus suitable for training or fine-tuning a language model",
+      "relevant_ids": [
+        "HFforLegal/case-law",
+        "a2aj/canadian-case-law",
+        "mratanusarkar/Indian-Laws",
+        "pile-of-law/pile-of-law"
+      ],
+      "precision_at_5": 0.8,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "HFforLegal/case-law",
+          "score": 0.6896692514419556,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "dataset_id": "pile-of-law/pile-of-law",
+          "score": 0.6559814214706421,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "dataset_id": "mratanusarkar/Indian-Laws",
+          "score": 0.533745527267456,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "dataset_id": "a2aj/canadian-case-law",
+          "score": 0.4887363314628601,
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "dataset_id": "m-a-p/FineFineWeb",
+          "score": 0.41380470991134644,
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "query": "English medical text dataset suitable for training or fine-tuning a language model",
+      "relevant_ids": [
+        "FreedomIntelligence/medical-o1-reasoning-SFT",
+        "lavita/medical-qa-datasets",
+        "medalpaca/medical_meadow_medical_flashcards",
+        "medalpaca/medical_meadow_medqa",
+        "medalpaca/medical_meadow_wikidoc"
+      ],
+      "precision_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "lavita/medical-qa-datasets",
+          "score": 0.590248703956604,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "dataset_id": "medalpaca/medical_meadow_medqa",
+          "score": 0.5578562021255493,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "dataset_id": "medalpaca/medical_meadow_wikidoc",
+          "score": 0.5371273756027222,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "dataset_id": "medalpaca/medical_meadow_medical_flashcards",
+          "score": 0.5366917252540588,
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "dataset_id": "FreedomIntelligence/medical-o1-reasoning-SFT",
+          "score": 0.4964645504951477,
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "query": "English financial text corpus suitable for training or fine-tuning a language model",
+      "relevant_ids": [
+        "artefactory/Argimi-Ardian-Finance-10k-text",
+        "gbharti/finance-alpaca",
+        "vidore/vidore_v3_finance_en"
+      ],
+      "precision_at_5": 0.6,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "vidore/vidore_v3_finance_en",
+          "score": 0.5507929921150208,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "dataset_id": "defeatbeta/yahoo-finance-data",
+          "score": 0.41976064443588257,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "dataset_id": "artefactory/Argimi-Ardian-Finance-10k-text",
+          "score": 0.41936278343200684,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "dataset_id": "artefactory/Argimi-Ardian-Finance-10k-text-image",
+          "score": 0.41856667399406433,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "dataset_id": "gbharti/finance-alpaca",
+          "score": 0.3780157268047333,
+          "relevant": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "num_queries": 6,
+    "mean_precision_at_5": 0.6333333333333334,
+    "mean_reciprocal_rank": 0.9166666666666666,
+    "mean_recall": 0.8888888888888888
+  }
+}
