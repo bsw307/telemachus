@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo  # Python 3.9+ standard library
 from telemachus.evaluation.cases import EVAL_CASES
 from telemachus.evaluation.metrics import precision_at_k, recall_at_k, reciprocal_rank
 from telemachus.models import HFDatasetMetadata
-from telemachus.reranking.task_category import rerank
+from telemachus.reranking.task_category import TaskCategoryReranker
 from telemachus.retrieval.dense import DenseRetriever
 from telemachus.sources.huggingface import get_hf_datasets
 
@@ -68,6 +68,7 @@ def main() -> None:
     dense_retrieval = DenseRetriever(
         corpus=corpus
     )
+    task_reranker = TaskCategoryReranker(bonus=0.08)
 
     top_k = 5
     benchmark_output = {
@@ -82,7 +83,7 @@ def main() -> None:
 
         scored_results = dense_retrieval.retrieve(case.query)
 
-        scored_results = rerank(
+        scored_results = task_reranker.rerank(
             scored_results,
             case.task_category,
         )
