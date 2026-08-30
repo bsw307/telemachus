@@ -1,61 +1,19 @@
 from __future__ import annotations
 
 import json
-from collections.abc import Sequence
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo  # Python 3.9+ standard library
 
 import numpy as np
-from huggingface_hub import HfApi
 from numpy.linalg import norm
 from sentence_transformers import SentenceTransformer
 
 from telemachus.models import HFDatasetMetadata
-
-DEFAULT_EXPAND_FIELDS: list[str] = [
-    "author",
-    "cardData",
-    "description",
-    "downloads",
-    "lastModified",
-    "tags",
-]
+from telemachus.sources.huggingface import get_hf_datasets
 
 DEFAULT_MODEL: str = "sentence-transformers/all-MiniLM-L12-v2"
-
-
-def get_hf_datasets(
-    term: str | None = None,
-    lim: int = 5,
-    search_language: str = "en",
-    task_category: str | None = None,
-    extra_filters: list[str] | None = None,
-    sort_by: str = "downloads",
-    expand: Sequence[str] | None = None,
-    api: HfApi | None = None,
-) -> list[HFDatasetMetadata]:
-
-    client = api or HfApi()
-    fields = list(expand) if expand is not None else DEFAULT_EXPAND_FIELDS
-    filters: list[str] = []
-
-    if search_language:
-        filters.append(f"language:{search_language}")
-    if task_category:
-        filters.append(f"task_categories:{task_category}")
-    if extra_filters:
-        filters.extend(extra_filters)
-
-    hf_results = client.list_datasets(
-        search=term,
-        filter=filters if filters else None,
-        limit=lim,
-        sort=sort_by,
-        direction=-1,
-        expand=fields,
-    )
-
-    return [HFDatasetMetadata.from_hf_api(raw) for raw in hf_results]
 
 
 # Generated
@@ -184,7 +142,8 @@ def main() -> None:
         ),
     ]
     # 1. Fetch datasets
-    results_by_category = ["robotics", "text-classification", "question-answering"]
+    results_by_category = ["robotics",
+                           "text-classification", "question-answering"]
     results_by_term = ["law", "medical", "finance"]
 
     raw_corpus: list[HFDatasetMetadata] = []
@@ -194,7 +153,8 @@ def main() -> None:
             get_hf_datasets(task_category=topic, lim=5, search_language="en")
         )
     for topic in results_by_term:
-        raw_corpus.extend(get_hf_datasets(term=topic, lim=5, search_language="en"))
+        raw_corpus.extend(get_hf_datasets(
+            term=topic, lim=5, search_language="en"))
 
     seen_ids = set()
     corpus: list[HFDatasetMetadata] = []
@@ -235,7 +195,8 @@ def main() -> None:
         scored_results = [
             ScoredDataset(
                 dataset=ds,
-                semantic_score=float(cosine_similarity(query_embedding, embedded_ds)),
+                semantic_score=float(cosine_similarity(
+                    query_embedding, embedded_ds)),
                 final_score=0,
             )
             for ds, embedded_ds in zip(corpus, embeddings_to_compare)
@@ -272,7 +233,8 @@ def main() -> None:
         # Print query benchmark breakdown
         print(f'\nQuery: "{case.query}"')
         print(f"Precision@{top_k}: {hits}/{top_k} ({precision_at_k:.0%})")
-        print(f"Recall@{top_k}: {hits}/{len(case.relevant)} ({recall_at_k:.0%})")
+        print(
+            f"Recall@{top_k}: {hits}/{len(case.relevant)} ({recall_at_k:.0%})")
         print("-" * 70)
 
         for rank, res in enumerate(top_results, start=1):
@@ -300,8 +262,10 @@ def main() -> None:
                 ],
             }
         )
-    mrr = sum(reciprocal_ranks) / len(reciprocal_ranks) if reciprocal_ranks else 0.0
-    mean_p5 = sum(precision_scores) / len(precision_scores) if precision_scores else 0.0
+    mrr = sum(reciprocal_ranks) / \
+        len(reciprocal_ranks) if reciprocal_ranks else 0.0
+    mean_p5 = sum(precision_scores) / \
+        len(precision_scores) if precision_scores else 0.0
     mean_r5 = sum(recall_scores) / len(recall_scores) if recall_scores else 0.0
     benchmark_output["summary"] = {
         "num_queries": len(eval_cases),
@@ -320,9 +284,18 @@ def main() -> None:
 
     print("=" * 70)
 
-    output_path = Path("results/reranked_semantic.json")
+    # Set your target timezone (e.g., ZoneInfo("UTC"), ZoneInfo("America/New_York"), etc.)
+    tz = ZoneInfo("UTC")
+
+    # Generate timestamp with timezone context
+    timestamp = datetime.now(tz=tz).strftime("%Y%m%d_%H%M%S")
+    output_path = Path(
+        f"results/codespaces_reranked_semantic_{timestamp}.json")
+
+    # Ensure directory exists
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
+    # Write benchmark output
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(benchmark_output, f, indent=2, ensure_ascii=False)
 
