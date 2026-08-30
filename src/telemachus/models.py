@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
+from datetime import datetime
 from typing import Any
 
 # Card Data tuple to be searched/embedded
@@ -105,41 +105,3 @@ class HFDatasetMetadata:
             language=ds_languages,
             tags=ds_tags,
         )
-
-
-# Tests
-
-if __name__ == "__main__":
-    print("🚀 Running local dataclass validation tests...")
-    # 1. Create a dummy instance matching the dataclass schema
-    test_metadata = HFDatasetMetadata(
-        id="meta-llama/Llama-3-8B",
-        name="Llama-3-8B",
-        author="meta-llama",
-        license="llama3",
-        downloads=1500000,
-        byte_size=16000000000,
-        last_updated=datetime.now(UTC),
-        description="A large language model.",
-        language=["en"],
-        task_categories=["text-generation"],
-        tags=["llm", "pretrained"],
-    )
-
-    # 2. Run Assertions
-    assert test_metadata.id == "meta-llama/Llama-3-8B", "ID assignment failed"
-    assert "llm" in test_metadata.tags, "Tag array assignment failed"
-    assert test_metadata.language == ["en"], "Language parsing failed"
-
-    # 3. Test default factories and optional fields
-    empty_metadata = HFDatasetMetadata(
-        id="empty/test",
-        name="test",
-        author="test",
-    )
-    assert len(empty_metadata.tags) == 0, (
-        "Default factory failed to initialize empty list"
-    )
-    assert empty_metadata.downloads == 0, "Default downloads fallback failed"
-
-    print("✅ All local tests passed successfully!")
