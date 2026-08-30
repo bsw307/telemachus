@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo  # Python 3.9+ standard library
 
+from telemachus.evaluation.cases import EVAL_CASES
+from telemachus.evaluation.metrics import precision_at_k, recall_at_k, reciprocal_rank
 from telemachus.models import HFDatasetMetadata
 from telemachus.reranking.task_category import rerank
 from telemachus.retrieval.dense import DenseRetriever
@@ -31,76 +32,11 @@ def visualize_datasets(datasets: list[HFDatasetMetadata]) -> None:
         # print(f"Semantic Representation:\n{semantic_representation(item)}")
 
 
-@dataclass
-class EvaluationCase:
-    query: str
-    relevant: set[str]
-    task_category: str | None
-
-
 def main() -> None:
 
     # Dummy labels for query, as determined by me.
     # Query: “dataset for training robots to perform physical manipulation tasks”
-    eval_cases = [
-        EvaluationCase(
-            query="dataset for training robots to perform physical manipulation tasks",
-            relevant={
-                "genrobot2025/10Kh-RealOmin-OpenData",
-                "XDOF/ABC-130k",
-                "InternRobotics/InternData-A1",
-                "cadene/droid",
-            },
-            task_category="robotics",
-        ),
-        EvaluationCase(
-            query="English dataset for training a text classification model",
-            relevant={
-                "nyu-mll/glue",
-                "aps/super_glue",
-                "stanfordnlp/imdb",
-            },
-            task_category="text-classification",
-        ),
-        EvaluationCase(
-            query="English dataset for training a question-answering model",
-            relevant={
-                "allenai/ai2_arc",
-                "rajpurkar/squad",
-            },
-            task_category="question-answering",
-        ),
-        EvaluationCase(
-            query="English legal text corpus suitable for training or fine-tuning a language model",
-            relevant={
-                "pile-of-law/pile-of-law",
-                "mratanusarkar/Indian-Laws",
-                "a2aj/canadian-case-law",
-                "HFforLegal/case-law",
-            },
-            task_category=None,
-        ),
-        EvaluationCase(
-            query="English medical text dataset suitable for training or fine-tuning a language model",
-            relevant={
-                "lavita/medical-qa-datasets",
-                "medalpaca/medical_meadow_medqa",
-                "medalpaca/medical_meadow_medical_flashcards",
-                "medalpaca/medical_meadow_wikidoc",
-                "FreedomIntelligence/medical-o1-reasoning-SFT",
-            },
-            task_category=None,
-        ),
-        EvaluationCase(
-            query="English financial text corpus suitable for training or fine-tuning a language model",
-            relevant={
-                "artefactory/Argimi-Ardian-Finance-10k-text",
-                "vidore/vidore_v3_finance_en",
-                "gbharti/finance-alpaca",
-            },
-            task_category=None,
-        ),
-    ]
+
     # 1. Fetch datasets
     results_by_category = ["robotics",
                            "text-classification", "question-answering"]
@@ -140,7 +76,7 @@ def main() -> None:
         "queries": [],
     }
 
-    for case in eval_cases:
+    for case in EVAL_CASES:
 
         # Score embeddings against corpus
 
@@ -156,32 +92,28 @@ def main() -> None:
         )
 
         top_results = scored_results[:top_k]
+        hits = sum(1 for res in top_results if res.dataset.id in case.relevant)
 
-        # For calculating RR
-        first_relevant_rank: int | None = None
-
-        for rank, res in enumerate(scored_results, start=1):
-            if res.dataset.id in case.relevant:
-                first_relevant_rank = rank
-                break
-
-        rr = (1.0 / first_relevant_rank) if first_relevant_rank is not None else 0.0
+        # RR for MRR
+        rr = reciprocal_rank(scored_results, case.relevant)
         reciprocal_ranks.append(rr)
 
         # Calculate Precision@K
-        hits = sum(1 for res in top_results if res.dataset.id in case.relevant)
-        precision_at_k = hits / top_k
-        precision_scores.append(precision_at_k)
+        precision = precision_at_k(
+            top_results,
+            case.relevant,
+            top_k)
+        precision_scores.append(precision)
 
         # Calculate Recall@K
-        recall_at_k = hits / len(case.relevant)
-        recall_scores.append(recall_at_k)
+        recall = recall_at_k(top_results, case.relevant)
+        recall_scores.append(recall)
 
         # Print query benchmark breakdown
         print(f'\nQuery: "{case.query}"')
-        print(f"Precision@{top_k}: {hits}/{top_k} ({precision_at_k:.0%})")
+        print(f"Precision@{top_k}: {hits}/{top_k} ({precision:.0%})")
         print(
-            f"Recall@{top_k}: {hits}/{len(case.relevant)} ({recall_at_k:.0%})")
+            f"Recall@{top_k}: {hits}/{len(case.relevant)} ({recall:.0%})")
         print("-" * 70)
 
         for rank, res in enumerate(top_results, start=1):
@@ -195,8 +127,8 @@ def main() -> None:
             {
                 "query": case.query,
                 "relevant_ids": sorted(case.relevant),
-                "precision_at_5": precision_at_k,
-                "recall_at_5": recall_at_k,
+                "precision_at_5": precision,
+                "recall_at_5": recall,
                 "reciprocal_rank": rr,
                 "top_results": [
                     {
@@ -215,7 +147,7 @@ def main() -> None:
         len(precision_scores) if precision_scores else 0.0
     mean_r5 = sum(recall_scores) / len(recall_scores) if recall_scores else 0.0
     benchmark_output["summary"] = {
-        "num_queries": len(eval_cases),
+        "num_queries": len(EVAL_CASES),
         "mean_precision_at_5": mean_p5,
         "mean_reciprocal_rank": mrr,
         "mean_recall": mean_r5,
@@ -224,7 +156,7 @@ def main() -> None:
     print("\n" + "=" * 70)
     print("GLOBAL BENCHMARK EVALUATION SUMMARY")
     print("=" * 70)
-    print(f"Total Test Queries:     {len(eval_cases)}")
+    print(f"Total Test Queries:     {len(EVAL_CASES)}")
     print(f"Mean Reciprocal Rank:   {mrr:.4f}")
     print(f"Mean Precision@5:       {mean_p5:.1%}")
     print(f"Mean Recall@5:       {mean_r5:.1%}")
