@@ -25,6 +25,9 @@ venv/
 .ruff_cache/
 .mypy_cache/
 
+#Results
+results/*
+
 # Local environment / secrets
 .env
 .env.*

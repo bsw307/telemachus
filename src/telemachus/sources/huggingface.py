@@ -13,8 +13,6 @@ DEFAULT_EXPAND_FIELDS: list[str] = [
     "tags",
 ]
 
-DEFAULT_MODEL: str = "sentence-transformers/all-MiniLM-L12-v2"
-
 
 def get_hf_datasets(
     term: str | None = None,

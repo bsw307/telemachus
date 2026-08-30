@@ -6,14 +6,11 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo  # Python 3.9+ standard library
 
-import numpy as np
-from numpy.linalg import norm
-from sentence_transformers import SentenceTransformer
-
-from telemachus.models import HFDatasetMetadata
+from telemachus.models import HFDatasetMetadata, ScoredDataset
+from telemachus.retrieval.dense import (
+    DenseRetriever,
+)
 from telemachus.sources.huggingface import get_hf_datasets
-
-DEFAULT_MODEL: str = "sentence-transformers/all-MiniLM-L12-v2"
 
 
 # Generated
@@ -35,40 +32,19 @@ def visualize_datasets(datasets: list[HFDatasetMetadata]) -> None:
         # print(f"Semantic Representation:\n{semantic_representation(item)}")
 
 
-def semantic_representation(dataset: HFDatasetMetadata) -> str:
-    name = dataset.name
-    description = "Description: " + dataset.description if dataset.description else ""
-
-    return f"Title: {name}\n{description}"
-
-
-def cosine_similarity(query: np.ndarray, value: np.ndarray) -> float:
-
-    return np.dot(query, value) / (norm(query) * norm(value))
-
-
-# fix bonus
-
-
 def rerank(
     scored_datasets: list[ScoredDataset],
     task_category: str | None,
     bonus: float = 0.08,
 ) -> list[ScoredDataset]:
     for ds in scored_datasets:
-        if task_category in ds.dataset.task_categories:
-            ds.final_score = ds.semantic_score + bonus
+        if (task_category is not None
+            and task_category in ds.dataset.task_categories):
+            ds.final_score = ds.dense_score + bonus
         else:
-            ds.final_score = ds.semantic_score
+            ds.final_score = ds.dense_score
 
     return scored_datasets
-
-
-@dataclass
-class ScoredDataset:
-    dataset: HFDatasetMetadata
-    semantic_score: float
-    final_score: float
 
 
 @dataclass
@@ -165,46 +141,37 @@ def main() -> None:
 
     print(f"Loaded {len(corpus)} unique datasets into evaluation corpus.\n")
 
-    # 2. Make semantic text
-    semantic_ds = [semantic_representation(ds) for ds in corpus]
-
-    # 3. Embed datasets
-    model = SentenceTransformer(DEFAULT_MODEL)
-    embeddings_to_compare = model.encode(
-        semantic_ds,
-        batch_size=32,
-        show_progress_bar=len(semantic_ds) > 50,
-        convert_to_numpy=True,
-    )
-
     reciprocal_ranks: list[float] = []
     precision_scores: list[float] = []
     recall_scores: list[float] = []
 
+    dense_retrieval = DenseRetriever(
+        corpus=corpus
+    )
+
+    top_k = 5
     benchmark_output = {
-        "model": DEFAULT_MODEL,
-        "top_k": 5,
+        "model": dense_retrieval.model_name,
+        "top_k": top_k,
         "queries": [],
     }
 
     for case in eval_cases:
-        query_embedding = model.encode(case.query)
 
         # Score embeddings against corpus
-        # fix referencing 'corpus' instead of undefined 'all_ds'
-        scored_results = [
-            ScoredDataset(
-                dataset=ds,
-                semantic_score=float(cosine_similarity(
-                    query_embedding, embedded_ds)),
-                final_score=0,
-            )
-            for ds, embedded_ds in zip(corpus, embeddings_to_compare)
-        ]
-        # pre_reranked_scored_results.sort(key=lambda item: item.score, reverse=True)
 
-        scored_results = rerank(scored_results, case.task_category)
-        scored_results.sort(key=lambda item: item.final_score, reverse=True)
+        scored_results = dense_retrieval.retrieve(case.query)
+
+        scored_results = rerank(
+            scored_results,
+            case.task_category,
+        )
+        scored_results.sort(
+            key=lambda item: item.final_score,
+            reverse=True,
+        )
+
+        top_results = scored_results[:top_k]
 
         # For calculating RR
         first_relevant_rank: int | None = None
@@ -213,12 +180,9 @@ def main() -> None:
             if res.dataset.id in case.relevant:
                 first_relevant_rank = rank
                 break
+
         rr = (1.0 / first_relevant_rank) if first_relevant_rank is not None else 0.0
         reciprocal_ranks.append(rr)
-
-        # Top k, add global variable/make dependent on number of labeled examples.
-        top_k = 5
-        top_results = scored_results[:top_k]
 
         # Calculate Precision@K
         hits = sum(1 for res in top_results if res.dataset.id in case.relevant)
@@ -226,7 +190,6 @@ def main() -> None:
         precision_scores.append(precision_at_k)
 
         # Calculate Recall@K
-        # Change this
         recall_at_k = hits / len(case.relevant)
         recall_scores.append(recall_at_k)
 

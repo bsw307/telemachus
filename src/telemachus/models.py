@@ -5,7 +5,15 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any
 
-# Card Data tuple to be searched/embedded
+
+@dataclass
+class ScoredDataset:
+    dataset: HFDatasetMetadata
+    dense_score: float | None = None
+    bm25_score: float | None = None
+    hybrid_score: float | None = None
+    reranker_score: float | None = None
+    final_score: float | None = None
 
 
 def _clean_str(text: Any) -> str:
