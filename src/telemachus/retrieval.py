@@ -6,10 +6,9 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo  # Python 3.9+ standard library
 
-from telemachus.models import HFDatasetMetadata, ScoredDataset
-from telemachus.retrieval.dense import (
-    DenseRetriever,
-)
+from telemachus.models import HFDatasetMetadata
+from telemachus.reranking.task_category import rerank
+from telemachus.retrieval.dense import DenseRetriever
 from telemachus.sources.huggingface import get_hf_datasets
 
 
@@ -30,21 +29,6 @@ def visualize_datasets(datasets: list[HFDatasetMetadata]) -> None:
         )
         print(f"   Description: {clean_desc}")
         # print(f"Semantic Representation:\n{semantic_representation(item)}")
-
-
-def rerank(
-    scored_datasets: list[ScoredDataset],
-    task_category: str | None,
-    bonus: float = 0.08,
-) -> list[ScoredDataset]:
-    for ds in scored_datasets:
-        if (task_category is not None
-            and task_category in ds.dataset.task_categories):
-            ds.final_score = ds.dense_score + bonus
-        else:
-            ds.final_score = ds.dense_score
-
-    return scored_datasets
 
 
 @dataclass
