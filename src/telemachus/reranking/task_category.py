@@ -1,4 +1,5 @@
 from telemachus.models import ScoredDataset
+from telemachus.reranking.base import RerankContext
 
 
 class TaskCategoryReranker:
@@ -7,15 +8,26 @@ class TaskCategoryReranker:
 
     def rerank(
         self,
-        scored_datasets: list[ScoredDataset],
-        task_category: str | None,
-        bonus: float = 0.08,
+        query: str,
+        scored_results: list[ScoredDataset],
+        context: RerankContext | None = None,
     ) -> list[ScoredDataset]:
-        for ds in scored_datasets:
-            if (task_category is not None
-                    and task_category in ds.dataset.task_categories):
-                ds.final_score = ds.dense_score + bonus
-            else:
-                ds.final_score = ds.dense_score
+        task_category = (
+            context.task_category
+            if context is not None
+            else None
+        )
 
-        return scored_datasets
+        for result in scored_results:
+            if (task_category is not None
+                    and task_category in result.dataset.task_categories):
+                result.final_score = result.dense_score + self.bonus
+            else:
+                result.final_score = result.dense_score
+
+        scored_results.sort(
+            key=lambda item: item.final_score,
+            reverse=True,
+        )
+
+        return scored_results

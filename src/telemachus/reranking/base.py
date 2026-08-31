@@ -1,6 +1,12 @@
+from dataclasses import dataclass
 from typing import Protocol
 
 from telemachus.models import ScoredDataset
+
+
+@dataclass
+class RerankContext:
+    task_category: str | None = None
 
 
 class Reranker(Protocol):
@@ -8,6 +14,6 @@ class Reranker(Protocol):
         self,
         query: str,
         scored_results: list[ScoredDataset],
-        task_category: str | None = None,
+        context: RerankContext | None = None,
     ) -> list[ScoredDataset]:
         ...
