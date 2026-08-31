@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from telemachus.evaluation.evaluator import EvaluationSummary
+from telemachus.reporting.helpers import result_score
 
 
 def save_evaluation(
@@ -28,17 +29,15 @@ def save_evaluation(
             {
                 "query": result.query,
                 "relevant_ids": sorted(result.relevant),
-                "precision_at_{top_k}": result.precision,
-                "recall_at_{top_k}": result.recall,
+                f"precision_at_{top_k}": result.precision,
+                f"recall_at_{top_k}": result.recall,
                 "reciprocal_rank": result.reciprocal_rank,
                 "top_results": [
                     {
                         "rank": rank,
                         "dataset_id": scored.dataset.id,
                         "score": (
-                            scored.final_score
-                            if scored.final_score is not None
-                            else scored.dense_score
+                            result_score(scored)
                         ),
                         "relevant": scored.dataset.id in result.relevant,
                     }

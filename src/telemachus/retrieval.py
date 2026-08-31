@@ -10,6 +10,9 @@ from telemachus.models import HFDatasetMetadata
 from telemachus.reporting.console import print_evaluation_summary
 from telemachus.reporting.json_output import save_evaluation
 from telemachus.reranking.task_category import TaskCategoryReranker
+from telemachus.retrieval.bm25 import BM25Retriever  # noqa: F401
+
+# from telemachus.retrieval.dense import DenseRetriever
 from telemachus.retrieval.dense import DenseRetriever
 from telemachus.sources.huggingface import get_hf_datasets
 
@@ -53,6 +56,10 @@ def main() -> None:
     retriever = DenseRetriever(corpus=corpus)
     reranker = TaskCategoryReranker(bonus=0.08)
 
+    """
+    retriever = BM25Retriever(corpus=corpus)
+    reranker = None
+    """
     k = 5
 
     metadata: dict[str, object] = {
@@ -66,6 +73,13 @@ def main() -> None:
         },
     }
 
+    """
+    metadata: dict[str, object] = {
+        "retriever": "bm25",
+        "retriever_config": {},
+        "reranker": None,
+    }
+    """
     summary = evaluate(
         retriever,
         EVAL_CASES,
@@ -78,9 +92,13 @@ def main() -> None:
     timestamp = datetime.now(tz=tz).strftime("%Y%m%d_%H%M%S")
 
     output_path = Path(
-        f"results/codespaces_reranked_semantic_{timestamp}.json"
+        f"results/dense_task_category_{timestamp}.json"
     )
-
+    """
+    output_path = Path(
+        f"results/bm25_none_{timestamp}.json"
+    )
+    """
     save_evaluation(
         summary=summary,
         output_path=output_path,

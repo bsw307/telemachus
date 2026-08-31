@@ -3,15 +3,9 @@ from numpy.linalg import norm
 from sentence_transformers import SentenceTransformer
 
 from telemachus.models import HFDatasetMetadata, ScoredDataset
+from telemachus.representations.dataset import dataset_text
 
 DEFAULT_MODEL: str = "sentence-transformers/all-MiniLM-L12-v2"
-
-
-def semantic_representation(dataset: HFDatasetMetadata) -> str:
-    name = dataset.name
-    description = "Description: " + dataset.description if dataset.description else ""
-
-    return f"Title: {name}\n{description}"
 
 
 def cosine_similarity(query: np.ndarray, value: np.ndarray) -> float:
@@ -27,13 +21,13 @@ class DenseRetriever:
     ):
         self.corpus = corpus
         self.model_name = model_name
-        self.semantic_corpus = [
-            semantic_representation(dataset)
+        self.text_corpus = [
+            dataset_text(dataset)
             for dataset in corpus
         ]
         self.model = SentenceTransformer(model_name)
         self.embeddings = self.model.encode(
-            self.semantic_corpus,
+            self.text_corpus,
             batch_size=32,
             show_progress_bar=len(self.corpus) > 50,
             convert_to_numpy=True
