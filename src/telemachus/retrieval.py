@@ -30,7 +30,7 @@ def main() -> None:
     for topic in results_by_category:
         raw_corpus.extend(
             get_hf_datasets(
-                task_category=topic,
+                task_categories=topic,
                 lim=5,
                 search_language="en"
             )
