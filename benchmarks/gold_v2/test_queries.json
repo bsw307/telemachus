@@ -1,0 +1,14 @@
+[
+  {
+    "id": "q001",
+    "query": "English medical question-answering dataset suitable for fine-tuning a language model"
+  },
+  {
+    "id": "q002",
+    "query": "Test1"
+  },
+  {
+    "id": "q003",
+    "query": "Test2"
+  }
+]

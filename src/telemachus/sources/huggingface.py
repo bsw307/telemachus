@@ -17,8 +17,8 @@ DEFAULT_EXPAND_FIELDS: list[str] = [
 def get_hf_datasets(
     term: str | None = None,
     lim: int = 5,
-    search_language: str = "en",
-    task_categories: str | None = None,
+    search_language: str | None = "en",
+    task_category: str | None = None,
     extra_filters: list[str] | None = None,
     sort_by: str = "downloads",
     expand: Sequence[str] | None = None,
@@ -31,8 +31,8 @@ def get_hf_datasets(
 
     if search_language:
         filters.append(f"language:{search_language}")
-    if task_categories:
-        filters.append(f"task_categories:{task_categories}")
+    if task_category:
+        filters.append(f"task_categories:{task_category}")
     if extra_filters:
         filters.extend(extra_filters)
 

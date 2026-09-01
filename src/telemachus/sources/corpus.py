@@ -1,5 +1,6 @@
 import json
 from dataclasses import asdict
+from datetime import datetime
 from pathlib import Path
 
 from telemachus.models import HFDatasetMetadata
@@ -11,6 +12,7 @@ def generate_hf_corpus(
     search_count: int = 20,
     task_categories: list[str] | None = None,
     task_count: int = 20,
+    search_language: str | None = "en",
 ) -> list[HFDatasetMetadata]:
 
     raw_corpus: list[HFDatasetMetadata] = []
@@ -20,7 +22,7 @@ def generate_hf_corpus(
             get_hf_datasets(
                 term=term,
                 lim=search_count,
-                search_language="en"
+                search_language=search_language
             )
         )
     for task in task_categories or []:
@@ -28,7 +30,7 @@ def generate_hf_corpus(
             get_hf_datasets(
                 task_category=task,
                 lim=task_count,
-                search_language="en"
+                search_language=search_language
             )
         )
 
@@ -39,6 +41,15 @@ def generate_hf_corpus(
             seen_ids.add(ds.id)
             corpus.append(ds)
     return corpus
+
+
+def _json_serializer(value: object) -> str:
+    if isinstance(value, datetime):
+        return value.isoformat()
+
+    raise TypeError(
+        f"Object of type {type(value).__name__} is not JSON serializable"
+    )
 
 
 def corpus_to_json(
@@ -65,6 +76,7 @@ def corpus_to_json(
             f,
             indent=2,
             ensure_ascii=False,
+            default=_json_serializer,
         )
 
 
@@ -74,6 +86,12 @@ def corpus_from_json(
 
     with input_path.open("r", encoding="utf-8") as f:
         payload = json.load(f)
+
+        for dataset in payload["datasets"]:
+            if dataset["last_updated"] is not None:
+                dataset["last_updated"] = datetime.fromisoformat(
+                    dataset["last_updated"]
+                )
 
     return [
         HFDatasetMetadata(**dataset)
