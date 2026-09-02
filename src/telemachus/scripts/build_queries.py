@@ -64,6 +64,6 @@ def queries_to_json(
 
 
 if __name__ == "__main__":
-    file_path = Path("benchmarks/gold_v2/test_queries.json")
+    file_path = Path("benchmarks/gold_v2/queries.json")
     if not file_path.is_file() or input(f"The file exists. Overwrite {file_path}? (Y/N): ").strip().lower() in ["y", "yes"]:
         queries_to_json(file_path, QUERIES)

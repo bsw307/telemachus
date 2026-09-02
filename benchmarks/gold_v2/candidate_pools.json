@@ -1,0 +1,337 @@
+[
+  {
+    "query_id": "q001",
+    "candidate_ids": [
+      "InternRobotics/InternData-A1",
+      "NeoteAIEmbodied/OpenNeoData",
+      "XDOF/ABC-130k",
+      "allenai/MolmoAct-Midtraining-Mixture",
+      "behavior-1k/2025-challenge-demos",
+      "cadene/droid",
+      "jat-project/jat-dataset",
+      "nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim",
+      "nvidia/PhysicalAI-Robotics-Open-H-Embodiment",
+      "sii-rhos-ai/ViFailback-Dataset",
+      "simple-world-lab/HiFi-UMI-2K",
+      "tencent/Hy-Embodied-0.5-VLA-Data"
+    ]
+  },
+  {
+    "query_id": "q002",
+    "candidate_ids": [
+      "AI4Science-WestlakeU/RealPDEBench",
+      "BanVienCorp/StreamPETR_3D_Dataset",
+      "Cyber-security-final-project/Generated_Injected_PDFs_HARMLESS",
+      "NeoteAIEmbodied/OpenNeoData",
+      "PhysInOneP10/PhysInOneP10",
+      "XDOF/ABC-130k",
+      "agibot-world/AgiBotWorld2026",
+      "allenai/MolmoAct-Midtraining-Mixture",
+      "jat-project/jat-dataset",
+      "nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim",
+      "nvidia/PhysicalAI-Robotics-Open-H-Embodiment",
+      "sii-rhos-ai/ViFailback-Dataset",
+      "simple-world-lab/HiFi-UMI-2K",
+      "sinuosity/ghana-ag-geospatial",
+      "tatsu-lab/alpaca",
+      "tencent/Hy-Embodied-0.5-VLA-Data",
+      "timm/oxford-iiit-pet",
+      "varunburde/Transparent_BOP",
+      "ybisk/piqa"
+    ]
+  },
+  {
+    "query_id": "q003",
+    "candidate_ids": [
+      "H1merka/TIGAS_dataset",
+      "Sachin21112004/news-finance-dataset",
+      "climatebert/climate_sentiment",
+      "code-search-net/code_search_net",
+      "cornell-movie-review-data/rotten_tomatoes",
+      "google/boolq",
+      "ibm-esa-geospatial/TerraMesh-Masks",
+      "ibm-esa-geospatial/TerraMesh-Masks-Eval",
+      "ibm-nasa-geospatial/multi-temporal-crop-classification",
+      "mteb/LegalBenchPC",
+      "programbench/ProgramBench-Tests",
+      "rabuahmad/climatecheck",
+      "sentence-transformers/all-nli",
+      "stanfordnlp/imdb",
+      "stanfordnlp/snli",
+      "tensorshield/reddit_dataset_157"
+    ]
+  },
+  {
+    "query_id": "q004",
+    "candidate_ids": [
+      "CohereLabs/aya_collection",
+      "OpenGVLab/OmniCorpus-CC",
+      "amanutej/trustworthy-biology-agents-traces",
+      "climatebert/climate_sentiment",
+      "cornell-movie-review-data/rotten_tomatoes",
+      "mteb/ClimateFEVER_test_top_250_only_w_correct-v2",
+      "mteb/MIRACLRetrievalHardNegatives",
+      "mteb/fiqa",
+      "nyu-mll/blimp",
+      "programbench/ProgramBench-Tests",
+      "rabuahmad/climatecheck",
+      "sentence-transformers/all-nli",
+      "sentence-transformers/stsb",
+      "stanfordnlp/imdb",
+      "stanfordnlp/snli",
+      "taylor-geospatial/ftw-planet",
+      "truthfulqa/truthful_qa",
+      "xlangai/BRIGHT"
+    ]
+  },
+  {
+    "query_id": "q005",
+    "candidate_ids": [
+      "BeIR/climate-fever-qrels",
+      "allenai/ai2_arc",
+      "allenai/openbookqa",
+      "allenai/qasc",
+      "derek-thomas/ScienceQA",
+      "google/boolq",
+      "hotpotqa/hotpot_qa",
+      "keivalya/MedQuad-MedicalQnADataset",
+      "mandarjoshi/trivia_qa",
+      "openlifescienceai/medmcqa",
+      "rajpurkar/squad",
+      "sentence-transformers/natural-questions",
+      "sentence-transformers/squad",
+      "tau/commonsense_qa",
+      "ybisk/piqa"
+    ]
+  },
+  {
+    "query_id": "q006",
+    "candidate_ids": [
+      "AdaptLLM/finance-tasks",
+      "Idavidrein/gpqa",
+      "allenai/openbookqa",
+      "allenai/qasc",
+      "allenai/sciq",
+      "avaliev/ChemistryQA",
+      "google/boolq",
+      "hotpotqa/hotpot_qa",
+      "keivalya/MedQuad-MedicalQnADataset",
+      "medalpaca/medical_meadow_mediqa",
+      "mteb/legalbench_consumer_contracts_qa",
+      "rajpurkar/squad",
+      "sentence-transformers/natural-questions",
+      "sentence-transformers/squad",
+      "sweatSmile/neet-biology-qa",
+      "tau/commonsense_qa",
+      "truthfulqa/truthful_qa"
+    ]
+  },
+  {
+    "query_id": "q007",
+    "candidate_ids": [
+      "AmazonScience/document-haystack",
+      "Azzindani/ID_Legal_QA_SynThink",
+      "Azzindani/Legal_Corpus_QA_SynDeepThink",
+      "G4KMU/LEMUR",
+      "SherlockRamos/jurisdb-legal-documents",
+      "TryDotAtwo/legal-corpus-raw-batches",
+      "eduagarcia/LegalPT",
+      "isaacus/open-australian-legal-corpus",
+      "joelniklaus/Multi_Legal_Pile",
+      "mteb/LegalBenchPC",
+      "nguha/legalbench",
+      "nvidia/Nemotron-Pretraining-Legal-v1",
+      "th1nhng0/vietnamese-legal-documents",
+      "theresiavr/legalpincite"
+    ]
+  },
+  {
+    "query_id": "q008",
+    "candidate_ids": [
+      "AI-team-UoA/greek_legal_code",
+      "SherlockRamos/jurisdb-legal-documents",
+      "TryDotAtwo/legal-corpus-raw-batches",
+      "code-search-net/code_search_net",
+      "eduagarcia/LegalPT",
+      "fancyzhx/ag_news",
+      "isaacus/open-australian-legal-corpus",
+      "joelniklaus/Multi_Legal_Pile",
+      "mteb/LegalBenchPC",
+      "mteb/MIRACLRetrievalHardNegatives",
+      "nguha/legalbench",
+      "nvidia/Nemotron-Pretraining-Legal-v1",
+      "th1nhng0/vietnamese-legal-documents",
+      "theresiavr/legalpincite",
+      "voilaj/swiss-caselaw"
+    ]
+  },
+  {
+    "query_id": "q009",
+    "candidate_ids": [
+      "Azzindani/ID_Legal_QA_SynThink",
+      "Azzindani/Legal_Corpus_QA_SynDeepThink",
+      "G4KMU/LEMUR",
+      "TryDotAtwo/legal-corpus-raw-batches",
+      "abisee/cnn_dailymail",
+      "allenai/qasc",
+      "derek-thomas/ScienceQA",
+      "eduagarcia/LegalPT",
+      "google/boolq",
+      "hltcoe/megawika",
+      "keivalya/MedQuad-MedicalQnADataset",
+      "mandarjoshi/trivia_qa",
+      "mteb/LegalBenchPC",
+      "nguha/legalbench",
+      "rajpurkar/squad",
+      "tau/commonsense_qa",
+      "theresiavr/legalpincite",
+      "ybisk/piqa"
+    ]
+  },
+  {
+    "query_id": "q010",
+    "candidate_ids": [
+      "CoolJaat/my-music-library",
+      "EvanSirius/MusicCaps",
+      "Kukedlc/suno-ai-music-dataset",
+      "Sinoosoida/SpeechRu",
+      "UnFaZeD07/Music-AVQA",
+      "ai-sage/TimeGround-1M",
+      "benjamin-paine/free-music-archive-full",
+      "benjamin-paine/free-music-archive-large",
+      "bghira/minimax-music3-rvq-reverse-distillation",
+      "drengskapur/midi-classical-music",
+      "fairygaze/music",
+      "hltcoe/megawika",
+      "laion/captioned-ai-music-snippets",
+      "mitermix/ai-music",
+      "sentence-transformers/parallel-sentences-opensubtitles",
+      "speechcolab/gigaspeech",
+      "stanfordnlp/snli"
+    ]
+  },
+  {
+    "query_id": "q011",
+    "candidate_ids": [
+      "Idavidrein/gpqa",
+      "MIL-UT/Japanese-Medical-VQA-12m",
+      "PatronusAI/financebench",
+      "allenai/qasc",
+      "facebook/belebele",
+      "keivalya/MedQuad-MedicalQnADataset",
+      "lavita/medical-qa-datasets",
+      "medalpaca/medical_meadow_mediqa",
+      "medalpaca/medical_meadow_medqa",
+      "medalpaca/medical_meadow_wikidoc",
+      "medalpaca/medical_meadow_wikidoc_patient_information",
+      "mteb/legalbench_consumer_contracts_qa",
+      "openlifescienceai/medmcqa",
+      "sentence-transformers/natural-questions",
+      "sweatSmile/neet-biology-qa",
+      "tau/commonsense_qa",
+      "truthfulqa/truthful_qa"
+    ]
+  },
+  {
+    "query_id": "q012",
+    "candidate_ids": [
+      "MLCommons/peoples_speech",
+      "MLCommons/peoples_speech_v1.0",
+      "NCSpeech/YO-CPT-ru",
+      "ai-sage/TimeGround-1M",
+      "amphion/Emilia-Dataset",
+      "disco-eth/EuroSpeech",
+      "disco-eth/WorldSpeech",
+      "espnet/yodas-granary",
+      "facebook/multilingual_librispeech",
+      "facebook/voxpopuli",
+      "fsicoli/common_voice_22_0",
+      "google/WaxalNLP",
+      "google/svq",
+      "openslr/librispeech_asr",
+      "sarulab-speech/yodas2_sidon",
+      "speechcolab/gigaspeech"
+    ]
+  },
+  {
+    "query_id": "q013",
+    "candidate_ids": [
+      "PatronusAI/financebench",
+      "Sachin21112004/news-finance-dataset",
+      "artefactory/Argimi-Ardian-Finance-10k-text",
+      "artefactory/Argimi-Ardian-Finance-10k-text-image",
+      "defeatbeta/yahoo-finance-data",
+      "embedding-benchmark/FinanceBench",
+      "embodied-analysis/FinanceGym",
+      "gbharti/finance-alpaca",
+      "gretelai/synthetic_pii_finance_multilingual",
+      "hotpotqa/hotpot_qa",
+      "mteb/fiqa",
+      "nvidia/Nemotron-SpecializedDomains-Finance-v1",
+      "oyi77/OpenMedallion",
+      "sujet-ai/Sujet-Finance-Instruct-177k",
+      "yifishbossman/financial-analyst-data-full"
+    ]
+  },
+  {
+    "query_id": "q014",
+    "candidate_ids": [
+      "BeIR/climate-fever",
+      "JuanPF7/climate-change-temperatures",
+      "africatic/africa-world-bank-climate-environment-time-series",
+      "climatebert/climate_sentiment",
+      "datania/climate-trace",
+      "eci-io/climate-evaluation",
+      "electricsheepafrica/africa-world-bank-climate-change-indicators-for-cameroon",
+      "jasonjewik/climate-learn",
+      "leeroy-jankins/DoD-Instruction-8130-01-Installation-of-Geospatial-Information-And-Services",
+      "lightonai/climate-fever-decontaminated",
+      "mteb/ClimateFEVER_test_top_250_only_w_correct-v2",
+      "mteb/climate-fever",
+      "rabuahmad/climatecheck",
+      "rlacombe/ClimateNet",
+      "tdiggelm/climate_fever"
+    ]
+  },
+  {
+    "query_id": "q015",
+    "candidate_ids": [
+      "AI-team-UoA/greek_legal_code",
+      "Azzindani/Legal_Corpus_QA_SynDeepThink",
+      "LeadBHYT/bhyt-legal-docs",
+      "SherlockRamos/jurisdb-legal-documents",
+      "TryDotAtwo/legal-corpus-raw-batches",
+      "eduagarcia/LegalPT",
+      "isaacus/open-australian-legal-corpus",
+      "joelniklaus/Multi_Legal_Pile",
+      "mteb/LegalBenchPC",
+      "nguha/legalbench",
+      "th1nhng0/vietnamese-legal-documents",
+      "theresiavr/legalpincite",
+      "ug-dsc/climatecasechart",
+      "voilaj/swiss-caselaw"
+    ]
+  },
+  {
+    "query_id": "q016",
+    "candidate_ids": [
+      "AmazonScience/document-haystack",
+      "Hothan/OlympiadBench",
+      "MIL-UT/Japanese-Medical-VQA-12m",
+      "NVEagle/LocateAnything-Data",
+      "Novel-BioMedAI/Medical_Segmentation_Decathlon",
+      "allenai/openbookqa",
+      "allenai/qasc",
+      "derek-thomas/ScienceQA",
+      "google/boolq",
+      "keivalya/MedQuad-MedicalQnADataset",
+      "medalpaca/medical_meadow_medqa",
+      "mvp-lab/LLaVA-OneVision-2-Data",
+      "openlifescienceai/medmcqa",
+      "sentence-transformers/natural-questions",
+      "sentence-transformers/squad",
+      "speechcolab/gigaspeech",
+      "ybisk/piqa"
+    ]
+  }
+]
