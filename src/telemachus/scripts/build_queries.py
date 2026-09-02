@@ -2,9 +2,39 @@ import json
 from pathlib import Path
 
 QUERIES = [
-    "English medical question-answering dataset suitable for fine-tuning a language model",
-    "Test1",
-    "Test2",
+    # Paired queries
+
+    # Lexical ↔ semantic
+    "robot manipulation dataset",
+    "demonstrations of robots learning to grasp and move physical objects",
+
+    # Technical terminology ↔ plain English
+    "binary sentiment classification dataset",
+    "text labeled according to whether opinions are positive or negative",
+
+    # Metadata-style ↔ user intent
+    "question-answering dataset",
+    "questions paired with answers for training a model to answer queries",
+
+    # Short keyword ↔ conversational
+    "legal document retrieval dataset",
+    "I need a collection of legal documents that could be used to evaluate search and retrieval",
+
+    # Hard constraints
+    "English legal question-answering dataset",
+    "English-language music audio dataset for genre classification",
+
+    # Modality
+    "medical images paired with questions and answers",
+    "English speech recordings with transcriptions",
+
+    # Ambiguity
+    "dataset for financial reasoning",
+    "dataset for studying climate change",
+
+    # Multi-constraint / agent-friendly
+    "English legal case documents suitable for evaluating semantic search",
+    "English medical image question-answering data suitable for training a multimodal model",
 ]
 
 

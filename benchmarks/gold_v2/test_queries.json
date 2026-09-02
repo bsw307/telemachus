@@ -1,14 +1,66 @@
 [
   {
     "id": "q001",
-    "query": "English medical question-answering dataset suitable for fine-tuning a language model"
+    "query": "robot manipulation dataset"
   },
   {
     "id": "q002",
-    "query": "Test1"
+    "query": "demonstrations of robots learning to grasp and move physical objects"
   },
   {
     "id": "q003",
-    "query": "Test2"
+    "query": "binary sentiment classification dataset"
+  },
+  {
+    "id": "q004",
+    "query": "text labeled according to whether opinions are positive or negative"
+  },
+  {
+    "id": "q005",
+    "query": "question-answering dataset"
+  },
+  {
+    "id": "q006",
+    "query": "questions paired with answers for training a model to answer queries"
+  },
+  {
+    "id": "q007",
+    "query": "legal document retrieval dataset"
+  },
+  {
+    "id": "q008",
+    "query": "I need a collection of legal documents that could be used to evaluate search and retrieval"
+  },
+  {
+    "id": "q009",
+    "query": "English legal question-answering dataset"
+  },
+  {
+    "id": "q010",
+    "query": "English-language music audio dataset for genre classification"
+  },
+  {
+    "id": "q011",
+    "query": "medical images paired with questions and answers"
+  },
+  {
+    "id": "q012",
+    "query": "English speech recordings with transcriptions"
+  },
+  {
+    "id": "q013",
+    "query": "dataset for financial reasoning"
+  },
+  {
+    "id": "q014",
+    "query": "dataset for studying climate change"
+  },
+  {
+    "id": "q015",
+    "query": "English legal case documents suitable for evaluating semantic search"
+  },
+  {
+    "id": "q016",
+    "query": "English medical image question-answering data suitable for training a multimodal model"
   }
 ]
