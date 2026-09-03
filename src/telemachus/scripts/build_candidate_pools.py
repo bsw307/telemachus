@@ -33,7 +33,7 @@ def build_candidates(retrievers: list[Retriever], queries: list[dict[str, str]],
 
 
 if __name__ == "__main__":
-    file_path = Path("benchmarks/gold_v2/candidate_pools.json")
+    file_path = Path("benchmarks/gold_v2/test_candidate_pools.json")
     corpus_path = Path("benchmarks/gold_v2/corpus.json")
     queries_path = Path("benchmarks/gold_v2/queries.json")
     if not file_path.is_file() or input(f"The file exists. Overwrite {file_path}? (Y/N): ").strip().lower() in ["y", "yes"]:
