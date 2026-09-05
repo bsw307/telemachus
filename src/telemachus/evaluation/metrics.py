@@ -3,17 +3,34 @@ from math import log2
 from telemachus.models import ScoredDataset
 
 
-def precision_at_k(top_results: list[ScoredDataset], relevant: set[str], top_k: int) -> float:
-    hits = sum(1 for res in top_results if res.dataset.id in relevant)
-    return hits / top_k
+def precision_at_k(
+    scored_results: list[ScoredDataset],
+    relevant: set[str],
+    k: int
+) -> float:
+    hits = sum(
+        1 for res in scored_results[:k]
+        if res.dataset.id in relevant
+    )
+    return hits / k
 
 
-def recall_at_k(top_results: list[ScoredDataset], relevant: set[str]) -> float:
-    hits = sum(1 for res in top_results if res.dataset.id in relevant)
-    return hits / len(relevant)
+def recall_at_k(
+    scored_results: list[ScoredDataset],
+    relevant: set[str],
+    k: int
+) -> float:
+    hits = sum(
+        1 for res in scored_results[:k]
+        if res.dataset.id in relevant
+    )
+    return hits / len(relevant) if relevant else 0.0
 
 
-def reciprocal_rank(scored_results: list[ScoredDataset], relevant: set[str]) -> float:
+def reciprocal_rank(
+    scored_results: list[ScoredDataset],
+    relevant: set[str],
+) -> float:
 
     for rank, res in enumerate(scored_results, start=1):
         if res.dataset.id in relevant:

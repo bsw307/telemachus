@@ -56,7 +56,7 @@ def test_recall_at_k():
 
     relevant = {"A", "B", "C"}
 
-    assert recall_at_k(results, relevant) == approx(2 / 3)
+    assert recall_at_k(results, relevant, 5) == approx(2 / 3)
 
 
 def test_recall_at_k_with_no_hits():
@@ -67,7 +67,7 @@ def test_recall_at_k_with_no_hits():
 
     relevant = {"A", "B"}
 
-    assert recall_at_k(results, relevant) == approx(0.0)
+    assert recall_at_k(results, relevant, 2) == approx(0.0)
 
 
 def test_reciprocal_rank_first_result():
@@ -118,7 +118,7 @@ def test_metrics_on_known_ranking():
     relevant = {"A", "B", "C"}
 
     assert precision_at_k(results, relevant, 5) == approx(0.4)
-    assert recall_at_k(results, relevant) == approx(2 / 3)
+    assert recall_at_k(results, relevant, 5) == approx(2 / 3)
     assert reciprocal_rank(results, relevant) == approx(0.5)
 
 
