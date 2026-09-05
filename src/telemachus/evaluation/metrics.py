@@ -1,9 +1,6 @@
 from math import log2
-from pathlib import Path
 
 from telemachus.models import ScoredDataset
-
-# JUDGMENTS_PATH = Path("benchmarks/gold_v2/test_candidate_pools.json")
 
 
 def precision_at_k(top_results: list[ScoredDataset], relevant: set[str], top_k: int) -> float:
@@ -40,7 +37,7 @@ def ndcg(
 
     idcg: float = 0
     ideal_scores = sorted(relevance.values(), reverse=True)
-    for index, rel in enumerate(ideal_scores[:len(top_results)]):
+    for index, rel in enumerate(ideal_scores[:k]):
         numerator = (2 ** rel) - 1
         denominator = log2(index + 2)
         idcg += numerator / denominator
