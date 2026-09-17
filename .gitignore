@@ -27,6 +27,9 @@ venv/
 
 #Results
 results/*
+!results/gold_v2/
+!results/gold_v2/bm25.json
+!results/gold_v2/dense.json
 
 # Local environment / secrets
 .env

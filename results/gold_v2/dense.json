@@ -1,0 +1,1202 @@
+{
+  "metadata": {
+    "benchmark": "gold_v2",
+    "retriever": "dense",
+    "model": "sentence-transformers/all-MiniLM-L12-v2"
+  },
+  "summary": {
+    "num_queries": 16,
+    "mean_ndcg_5": 0.7869549837837728,
+    "mean_ndcg_10": 0.8446000892754786,
+    "mean_precision_5": 0.7875,
+    "mean_precision_10": 0.7,
+    "mean_recall_10": 0.8150813545115015,
+    "mean_reciprocal_rank": 1.0
+  },
+  "queries": [
+    {
+      "query_id": "q001",
+      "query": "robot manipulation dataset",
+      "metrics": {
+        "ndcg_5": 1.0,
+        "ndcg_10": 0.9537125187088151,
+        "precision_5": 1.0,
+        "precision_10": 1.0,
+        "recall_10": 0.9090909090909091,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "cadene/droid",
+          "score": 0.6706562638282776,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim",
+          "score": 0.64080810546875,
+          "relevance": 2
+        },
+        {
+          "rank": 3,
+          "dataset_id": "XDOF/ABC-130k",
+          "score": 0.631418764591217,
+          "relevance": 2
+        },
+        {
+          "rank": 4,
+          "dataset_id": "NeoteAIEmbodied/OpenNeoData",
+          "score": 0.6096277236938477,
+          "relevance": 2
+        },
+        {
+          "rank": 5,
+          "dataset_id": "nvidia/PhysicalAI-Robotics-Open-H-Embodiment",
+          "score": 0.6010941863059998,
+          "relevance": 2
+        },
+        {
+          "rank": 6,
+          "dataset_id": "InternRobotics/InternData-A1",
+          "score": 0.5872804522514343,
+          "relevance": 2
+        },
+        {
+          "rank": 7,
+          "dataset_id": "sii-rhos-ai/ViFailback-Dataset",
+          "score": 0.569040060043335,
+          "relevance": 2
+        },
+        {
+          "rank": 8,
+          "dataset_id": "simple-world-lab/HiFi-UMI-2K",
+          "score": 0.5430498123168945,
+          "relevance": 1
+        },
+        {
+          "rank": 9,
+          "dataset_id": "behavior-1k/2025-challenge-demos",
+          "score": 0.5173866152763367,
+          "relevance": 2
+        },
+        {
+          "rank": 10,
+          "dataset_id": "allenai/MolmoAct-Midtraining-Mixture",
+          "score": 0.5136314630508423,
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q002",
+      "query": "demonstrations of robots learning to grasp and move physical objects",
+      "metrics": {
+        "ndcg_5": 0.6130840109067678,
+        "ndcg_10": 0.84645910241498,
+        "precision_5": 0.8,
+        "precision_10": 0.8,
+        "recall_10": 0.8888888888888888,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim",
+          "score": 0.5588943958282471,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "tencent/Hy-Embodied-0.5-VLA-Data",
+          "score": 0.4894421100616455,
+          "relevance": 1
+        },
+        {
+          "rank": 3,
+          "dataset_id": "nvidia/PhysicalAI-Robotics-Open-H-Embodiment",
+          "score": 0.43595975637435913,
+          "relevance": 1
+        },
+        {
+          "rank": 4,
+          "dataset_id": "allenai/MolmoAct-Midtraining-Mixture",
+          "score": 0.4286404252052307,
+          "relevance": 2
+        },
+        {
+          "rank": 5,
+          "dataset_id": "ybisk/piqa",
+          "score": 0.41956526041030884,
+          "relevance": 0
+        },
+        {
+          "rank": 6,
+          "dataset_id": "sii-rhos-ai/ViFailback-Dataset",
+          "score": 0.4038020372390747,
+          "relevance": 1
+        },
+        {
+          "rank": 7,
+          "dataset_id": "agibot-world/AgiBotWorld2026",
+          "score": 0.39965009689331055,
+          "relevance": 2
+        },
+        {
+          "rank": 8,
+          "dataset_id": "NeoteAIEmbodied/OpenNeoData",
+          "score": 0.39455899596214294,
+          "relevance": 2
+        },
+        {
+          "rank": 9,
+          "dataset_id": "PhysInOneP10/PhysInOneP10",
+          "score": 0.3773219883441925,
+          "relevance": 0
+        },
+        {
+          "rank": 10,
+          "dataset_id": "XDOF/ABC-130k",
+          "score": 0.37611791491508484,
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q003",
+      "query": "binary sentiment classification dataset",
+      "metrics": {
+        "ndcg_5": 0.9514426589871553,
+        "ndcg_10": 0.9514426589871553,
+        "precision_5": 0.6,
+        "precision_10": 0.3,
+        "recall_10": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "stanfordnlp/imdb",
+          "score": 0.614858090877533,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "climatebert/climate_sentiment",
+          "score": 0.5740962624549866,
+          "relevance": 1
+        },
+        {
+          "rank": 3,
+          "dataset_id": "cornell-movie-review-data/rotten_tomatoes",
+          "score": 0.5254953503608704,
+          "relevance": 2
+        },
+        {
+          "rank": 4,
+          "dataset_id": "google/boolq",
+          "score": 0.4820699691772461,
+          "relevance": 0
+        },
+        {
+          "rank": 5,
+          "dataset_id": "stanfordnlp/snli",
+          "score": 0.4701251983642578,
+          "relevance": 0
+        },
+        {
+          "rank": 6,
+          "dataset_id": "sentence-transformers/all-nli",
+          "score": 0.44980335235595703,
+          "relevance": 0
+        },
+        {
+          "rank": 7,
+          "dataset_id": "Sachin21112004/news-finance-dataset",
+          "score": 0.44120046496391296,
+          "relevance": 0
+        },
+        {
+          "rank": 8,
+          "dataset_id": "code-search-net/code_search_net",
+          "score": 0.4172258973121643,
+          "relevance": 0
+        },
+        {
+          "rank": 9,
+          "dataset_id": "rabuahmad/climatecheck",
+          "score": 0.4146183729171753,
+          "relevance": 0
+        },
+        {
+          "rank": 10,
+          "dataset_id": "tensorshield/reddit_dataset_157",
+          "score": 0.4139854311943054,
+          "relevance": 0
+        }
+      ]
+    },
+    {
+      "query_id": "q004",
+      "query": "text labeled according to whether opinions are positive or negative",
+      "metrics": {
+        "ndcg_5": 0.9514426589871553,
+        "ndcg_10": 0.9514426589871553,
+        "precision_5": 0.6,
+        "precision_10": 0.3,
+        "recall_10": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "cornell-movie-review-data/rotten_tomatoes",
+          "score": 0.5012170672416687,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "climatebert/climate_sentiment",
+          "score": 0.4830887019634247,
+          "relevance": 1
+        },
+        {
+          "rank": 3,
+          "dataset_id": "stanfordnlp/imdb",
+          "score": 0.38930743932724,
+          "relevance": 2
+        },
+        {
+          "rank": 4,
+          "dataset_id": "stanfordnlp/snli",
+          "score": 0.34260788559913635,
+          "relevance": 0
+        },
+        {
+          "rank": 5,
+          "dataset_id": "sentence-transformers/stsb",
+          "score": 0.3029959201812744,
+          "relevance": 0
+        },
+        {
+          "rank": 6,
+          "dataset_id": "mteb/fiqa",
+          "score": 0.2957001328468323,
+          "relevance": 0
+        },
+        {
+          "rank": 7,
+          "dataset_id": "sentence-transformers/all-nli",
+          "score": 0.2897036075592041,
+          "relevance": 0
+        },
+        {
+          "rank": 8,
+          "dataset_id": "xlangai/BRIGHT",
+          "score": 0.28452348709106445,
+          "relevance": 0
+        },
+        {
+          "rank": 9,
+          "dataset_id": "truthfulqa/truthful_qa",
+          "score": 0.27747273445129395,
+          "relevance": 0
+        },
+        {
+          "rank": 10,
+          "dataset_id": "rabuahmad/climatecheck",
+          "score": 0.2753731310367584,
+          "relevance": 0
+        }
+      ]
+    },
+    {
+      "query_id": "q005",
+      "query": "question-answering dataset",
+      "metrics": {
+        "ndcg_5": 1.0,
+        "ndcg_10": 1.0,
+        "precision_5": 1.0,
+        "precision_10": 1.0,
+        "recall_10": 0.6666666666666666,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "sentence-transformers/natural-questions",
+          "score": 0.7350121736526489,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "sentence-transformers/squad",
+          "score": 0.7222076654434204,
+          "relevance": 2
+        },
+        {
+          "rank": 3,
+          "dataset_id": "allenai/qasc",
+          "score": 0.7106936573982239,
+          "relevance": 2
+        },
+        {
+          "rank": 4,
+          "dataset_id": "google/boolq",
+          "score": 0.7091156244277954,
+          "relevance": 2
+        },
+        {
+          "rank": 5,
+          "dataset_id": "tau/commonsense_qa",
+          "score": 0.679888129234314,
+          "relevance": 2
+        },
+        {
+          "rank": 6,
+          "dataset_id": "allenai/openbookqa",
+          "score": 0.6771727204322815,
+          "relevance": 2
+        },
+        {
+          "rank": 7,
+          "dataset_id": "hotpotqa/hotpot_qa",
+          "score": 0.6737333536148071,
+          "relevance": 2
+        },
+        {
+          "rank": 8,
+          "dataset_id": "rajpurkar/squad",
+          "score": 0.6699660420417786,
+          "relevance": 2
+        },
+        {
+          "rank": 9,
+          "dataset_id": "mandarjoshi/trivia_qa",
+          "score": 0.6371523141860962,
+          "relevance": 2
+        },
+        {
+          "rank": 10,
+          "dataset_id": "allenai/ai2_arc",
+          "score": 0.6237120032310486,
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q006",
+      "query": "questions paired with answers for training a model to answer queries",
+      "metrics": {
+        "ndcg_5": 1.0,
+        "ndcg_10": 0.9537125187088151,
+        "precision_5": 1.0,
+        "precision_10": 1.0,
+        "recall_10": 0.5882352941176471,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "sentence-transformers/natural-questions",
+          "score": 0.5994222164154053,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "sentence-transformers/squad",
+          "score": 0.5736290216445923,
+          "relevance": 2
+        },
+        {
+          "rank": 3,
+          "dataset_id": "google/boolq",
+          "score": 0.5319150686264038,
+          "relevance": 2
+        },
+        {
+          "rank": 4,
+          "dataset_id": "allenai/qasc",
+          "score": 0.5212295055389404,
+          "relevance": 2
+        },
+        {
+          "rank": 5,
+          "dataset_id": "keivalya/MedQuad-MedicalQnADataset",
+          "score": 0.4964838922023773,
+          "relevance": 2
+        },
+        {
+          "rank": 6,
+          "dataset_id": "rajpurkar/squad",
+          "score": 0.48673582077026367,
+          "relevance": 2
+        },
+        {
+          "rank": 7,
+          "dataset_id": "hotpotqa/hotpot_qa",
+          "score": 0.4866200387477875,
+          "relevance": 2
+        },
+        {
+          "rank": 8,
+          "dataset_id": "AdaptLLM/finance-tasks",
+          "score": 0.467903733253479,
+          "relevance": 1
+        },
+        {
+          "rank": 9,
+          "dataset_id": "tau/commonsense_qa",
+          "score": 0.45340004563331604,
+          "relevance": 2
+        },
+        {
+          "rank": 10,
+          "dataset_id": "allenai/openbookqa",
+          "score": 0.44872692227363586,
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q007",
+      "query": "legal document retrieval dataset",
+      "metrics": {
+        "ndcg_5": 0.7074517904624027,
+        "ndcg_10": 0.8155306165661524,
+        "precision_5": 0.8,
+        "precision_10": 0.9,
+        "recall_10": 0.8181818181818182,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "theresiavr/legalpincite",
+          "score": 0.7505794763565063,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "TryDotAtwo/legal-corpus-raw-batches",
+          "score": 0.7046939730644226,
+          "relevance": 2
+        },
+        {
+          "rank": 3,
+          "dataset_id": "nguha/legalbench",
+          "score": 0.6962234377861023,
+          "relevance": 0
+        },
+        {
+          "rank": 4,
+          "dataset_id": "mteb/LegalBenchPC",
+          "score": 0.6882846355438232,
+          "relevance": 1
+        },
+        {
+          "rank": 5,
+          "dataset_id": "SherlockRamos/jurisdb-legal-documents",
+          "score": 0.6840276718139648,
+          "relevance": 1
+        },
+        {
+          "rank": 6,
+          "dataset_id": "eduagarcia/LegalPT",
+          "score": 0.6446030735969543,
+          "relevance": 1
+        },
+        {
+          "rank": 7,
+          "dataset_id": "Azzindani/Legal_Corpus_QA_SynDeepThink",
+          "score": 0.6167442798614502,
+          "relevance": 1
+        },
+        {
+          "rank": 8,
+          "dataset_id": "joelniklaus/Multi_Legal_Pile",
+          "score": 0.6097838878631592,
+          "relevance": 1
+        },
+        {
+          "rank": 9,
+          "dataset_id": "th1nhng0/vietnamese-legal-documents",
+          "score": 0.6035587787628174,
+          "relevance": 1
+        },
+        {
+          "rank": 10,
+          "dataset_id": "G4KMU/LEMUR",
+          "score": 0.6010587215423584,
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q008",
+      "query": "I need a collection of legal documents that could be used to evaluate search and retrieval",
+      "metrics": {
+        "ndcg_5": 0.8057635919248217,
+        "ndcg_10": 0.87077938765374,
+        "precision_5": 1.0,
+        "precision_10": 0.9,
+        "recall_10": 0.9,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "theresiavr/legalpincite",
+          "score": 0.6593579649925232,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "SherlockRamos/jurisdb-legal-documents",
+          "score": 0.599490761756897,
+          "relevance": 1
+        },
+        {
+          "rank": 3,
+          "dataset_id": "th1nhng0/vietnamese-legal-documents",
+          "score": 0.5318209528923035,
+          "relevance": 1
+        },
+        {
+          "rank": 4,
+          "dataset_id": "TryDotAtwo/legal-corpus-raw-batches",
+          "score": 0.5270796418190002,
+          "relevance": 2
+        },
+        {
+          "rank": 5,
+          "dataset_id": "mteb/LegalBenchPC",
+          "score": 0.5112172961235046,
+          "relevance": 1
+        },
+        {
+          "rank": 6,
+          "dataset_id": "eduagarcia/LegalPT",
+          "score": 0.5087525248527527,
+          "relevance": 1
+        },
+        {
+          "rank": 7,
+          "dataset_id": "joelniklaus/Multi_Legal_Pile",
+          "score": 0.5028982758522034,
+          "relevance": 1
+        },
+        {
+          "rank": 8,
+          "dataset_id": "nguha/legalbench",
+          "score": 0.49664953351020813,
+          "relevance": 0
+        },
+        {
+          "rank": 9,
+          "dataset_id": "voilaj/swiss-caselaw",
+          "score": 0.4922180771827698,
+          "relevance": 1
+        },
+        {
+          "rank": 10,
+          "dataset_id": "isaacus/open-australian-legal-corpus",
+          "score": 0.47879618406295776,
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q009",
+      "query": "English legal question-answering dataset",
+      "metrics": {
+        "ndcg_5": 0.6548086577531307,
+        "ndcg_10": 0.8886733622104969,
+        "precision_5": 0.6,
+        "precision_10": 0.5,
+        "recall_10": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "nguha/legalbench",
+          "score": 0.7477666735649109,
+          "relevance": 1
+        },
+        {
+          "rank": 2,
+          "dataset_id": "Azzindani/Legal_Corpus_QA_SynDeepThink",
+          "score": 0.717841386795044,
+          "relevance": 0
+        },
+        {
+          "rank": 3,
+          "dataset_id": "mteb/LegalBenchPC",
+          "score": 0.6547365188598633,
+          "relevance": 1
+        },
+        {
+          "rank": 4,
+          "dataset_id": "TryDotAtwo/legal-corpus-raw-batches",
+          "score": 0.6384769082069397,
+          "relevance": 1
+        },
+        {
+          "rank": 5,
+          "dataset_id": "Azzindani/ID_Legal_QA_SynThink",
+          "score": 0.6120529770851135,
+          "relevance": 0
+        },
+        {
+          "rank": 6,
+          "dataset_id": "theresiavr/legalpincite",
+          "score": 0.6080489754676819,
+          "relevance": 1
+        },
+        {
+          "rank": 7,
+          "dataset_id": "G4KMU/LEMUR",
+          "score": 0.5804424285888672,
+          "relevance": 1
+        },
+        {
+          "rank": 8,
+          "dataset_id": "eduagarcia/LegalPT",
+          "score": 0.5721816420555115,
+          "relevance": 0
+        },
+        {
+          "rank": 9,
+          "dataset_id": "tau/commonsense_qa",
+          "score": 0.5661555528640747,
+          "relevance": 0
+        },
+        {
+          "rank": 10,
+          "dataset_id": "google/boolq",
+          "score": 0.5632319450378418,
+          "relevance": 0
+        }
+      ]
+    },
+    {
+      "query_id": "q010",
+      "query": "English-language music audio dataset for genre classification",
+      "metrics": {
+        "ndcg_5": 1.0,
+        "ndcg_10": 1.0,
+        "precision_5": 0.6,
+        "precision_10": 0.3,
+        "recall_10": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "Kukedlc/suno-ai-music-dataset",
+          "score": 0.698227047920227,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "benjamin-paine/free-music-archive-full",
+          "score": 0.6175925135612488,
+          "relevance": 2
+        },
+        {
+          "rank": 3,
+          "dataset_id": "benjamin-paine/free-music-archive-large",
+          "score": 0.6157834529876709,
+          "relevance": 2
+        },
+        {
+          "rank": 4,
+          "dataset_id": "fairygaze/music",
+          "score": 0.6018314361572266,
+          "relevance": 0
+        },
+        {
+          "rank": 5,
+          "dataset_id": "drengskapur/midi-classical-music",
+          "score": 0.5297570824623108,
+          "relevance": 0
+        },
+        {
+          "rank": 6,
+          "dataset_id": "mitermix/ai-music",
+          "score": 0.4999638497829437,
+          "relevance": 0
+        },
+        {
+          "rank": 7,
+          "dataset_id": "speechcolab/gigaspeech",
+          "score": 0.492311030626297,
+          "relevance": 0
+        },
+        {
+          "rank": 8,
+          "dataset_id": "UnFaZeD07/Music-AVQA",
+          "score": 0.48082470893859863,
+          "relevance": 0
+        },
+        {
+          "rank": 9,
+          "dataset_id": "EvanSirius/MusicCaps",
+          "score": 0.4756748378276825,
+          "relevance": 0
+        },
+        {
+          "rank": 10,
+          "dataset_id": "CoolJaat/my-music-library",
+          "score": 0.4731324017047882,
+          "relevance": 0
+        }
+      ]
+    },
+    {
+      "query_id": "q011",
+      "query": "medical images paired with questions and answers",
+      "metrics": {
+        "ndcg_5": 0.5176573656780945,
+        "ndcg_10": 0.6917554139943437,
+        "precision_5": 0.8,
+        "precision_10": 0.7,
+        "recall_10": 0.875,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "openlifescienceai/medmcqa",
+          "score": 0.5836257338523865,
+          "relevance": 1
+        },
+        {
+          "rank": 2,
+          "dataset_id": "medalpaca/medical_meadow_medqa",
+          "score": 0.5259759426116943,
+          "relevance": 1
+        },
+        {
+          "rank": 3,
+          "dataset_id": "keivalya/MedQuad-MedicalQnADataset",
+          "score": 0.4915749132633209,
+          "relevance": 1
+        },
+        {
+          "rank": 4,
+          "dataset_id": "medalpaca/medical_meadow_wikidoc",
+          "score": 0.47656458616256714,
+          "relevance": 1
+        },
+        {
+          "rank": 5,
+          "dataset_id": "sentence-transformers/natural-questions",
+          "score": 0.4639786183834076,
+          "relevance": 0
+        },
+        {
+          "rank": 6,
+          "dataset_id": "medalpaca/medical_meadow_wikidoc_patient_information",
+          "score": 0.46183231472969055,
+          "relevance": 1
+        },
+        {
+          "rank": 7,
+          "dataset_id": "medalpaca/medical_meadow_mediqa",
+          "score": 0.4603407084941864,
+          "relevance": 1
+        },
+        {
+          "rank": 8,
+          "dataset_id": "Idavidrein/gpqa",
+          "score": 0.4540417790412903,
+          "relevance": 0
+        },
+        {
+          "rank": 9,
+          "dataset_id": "allenai/qasc",
+          "score": 0.4383891820907593,
+          "relevance": 0
+        },
+        {
+          "rank": 10,
+          "dataset_id": "MIL-UT/Japanese-Medical-VQA-12m",
+          "score": 0.4316272735595703,
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q012",
+      "query": "English speech recordings with transcriptions",
+      "metrics": {
+        "ndcg_5": 0.7895676983469901,
+        "ndcg_10": 0.70137857279776,
+        "precision_5": 1.0,
+        "precision_10": 0.9,
+        "recall_10": 0.6428571428571429,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "disco-eth/WorldSpeech",
+          "score": 0.5418227314949036,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "fsicoli/common_voice_22_0",
+          "score": 0.5355640649795532,
+          "relevance": 2
+        },
+        {
+          "rank": 3,
+          "dataset_id": "ai-sage/TimeGround-1M",
+          "score": 0.5298904776573181,
+          "relevance": 1
+        },
+        {
+          "rank": 4,
+          "dataset_id": "sarulab-speech/yodas2_sidon",
+          "score": 0.5154191851615906,
+          "relevance": 1
+        },
+        {
+          "rank": 5,
+          "dataset_id": "openslr/librispeech_asr",
+          "score": 0.5140947699546814,
+          "relevance": 2
+        },
+        {
+          "rank": 6,
+          "dataset_id": "speechcolab/gigaspeech",
+          "score": 0.512273371219635,
+          "relevance": 2
+        },
+        {
+          "rank": 7,
+          "dataset_id": "NCSpeech/YO-CPT-ru",
+          "score": 0.5101014971733093,
+          "relevance": 0
+        },
+        {
+          "rank": 8,
+          "dataset_id": "google/svq",
+          "score": 0.5007372498512268,
+          "relevance": 1
+        },
+        {
+          "rank": 9,
+          "dataset_id": "disco-eth/EuroSpeech",
+          "score": 0.4965435862541199,
+          "relevance": 2
+        },
+        {
+          "rank": 10,
+          "dataset_id": "amphion/Emilia-Dataset",
+          "score": 0.48264312744140625,
+          "relevance": 1
+        }
+      ]
+    },
+    {
+      "query_id": "q013",
+      "query": "dataset for financial reasoning",
+      "metrics": {
+        "ndcg_5": 0.6868750679130504,
+        "ndcg_10": 0.7107695384875807,
+        "precision_5": 0.8,
+        "precision_10": 0.8,
+        "recall_10": 0.6666666666666666,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "embedding-benchmark/FinanceBench",
+          "score": 0.6289958357810974,
+          "relevance": 1
+        },
+        {
+          "rank": 2,
+          "dataset_id": "Sachin21112004/news-finance-dataset",
+          "score": 0.6162434220314026,
+          "relevance": 0
+        },
+        {
+          "rank": 3,
+          "dataset_id": "nvidia/Nemotron-SpecializedDomains-Finance-v1",
+          "score": 0.5946508049964905,
+          "relevance": 2
+        },
+        {
+          "rank": 4,
+          "dataset_id": "sujet-ai/Sujet-Finance-Instruct-177k",
+          "score": 0.5761816501617432,
+          "relevance": 2
+        },
+        {
+          "rank": 5,
+          "dataset_id": "PatronusAI/financebench",
+          "score": 0.5597282648086548,
+          "relevance": 2
+        },
+        {
+          "rank": 6,
+          "dataset_id": "embodied-analysis/FinanceGym",
+          "score": 0.5548766851425171,
+          "relevance": 1
+        },
+        {
+          "rank": 7,
+          "dataset_id": "gbharti/finance-alpaca",
+          "score": 0.529859185218811,
+          "relevance": 1
+        },
+        {
+          "rank": 8,
+          "dataset_id": "oyi77/OpenMedallion",
+          "score": 0.5238836407661438,
+          "relevance": 1
+        },
+        {
+          "rank": 9,
+          "dataset_id": "yifishbossman/financial-analyst-data-full",
+          "score": 0.5146512389183044,
+          "relevance": 1
+        },
+        {
+          "rank": 10,
+          "dataset_id": "hotpotqa/hotpot_qa",
+          "score": 0.5104116797447205,
+          "relevance": 0
+        }
+      ]
+    },
+    {
+      "query_id": "q014",
+      "query": "dataset for studying climate change",
+      "metrics": {
+        "ndcg_5": 1.0,
+        "ndcg_10": 1.0,
+        "precision_5": 1.0,
+        "precision_10": 1.0,
+        "recall_10": 0.7142857142857143,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "jasonjewik/climate-learn",
+          "score": 0.7403699159622192,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "eci-io/climate-evaluation",
+          "score": 0.7174555063247681,
+          "relevance": 2
+        },
+        {
+          "rank": 3,
+          "dataset_id": "tdiggelm/climate_fever",
+          "score": 0.7074220180511475,
+          "relevance": 2
+        },
+        {
+          "rank": 4,
+          "dataset_id": "rabuahmad/climatecheck",
+          "score": 0.7031186819076538,
+          "relevance": 2
+        },
+        {
+          "rank": 5,
+          "dataset_id": "mteb/climate-fever",
+          "score": 0.6269354224205017,
+          "relevance": 2
+        },
+        {
+          "rank": 6,
+          "dataset_id": "mteb/ClimateFEVER_test_top_250_only_w_correct-v2",
+          "score": 0.6077399849891663,
+          "relevance": 2
+        },
+        {
+          "rank": 7,
+          "dataset_id": "climatebert/climate_sentiment",
+          "score": 0.5934825539588928,
+          "relevance": 2
+        },
+        {
+          "rank": 8,
+          "dataset_id": "rlacombe/ClimateNet",
+          "score": 0.5687220096588135,
+          "relevance": 2
+        },
+        {
+          "rank": 9,
+          "dataset_id": "BeIR/climate-fever",
+          "score": 0.5658989548683167,
+          "relevance": 2
+        },
+        {
+          "rank": 10,
+          "dataset_id": "africatic/africa-world-bank-climate-environment-time-series",
+          "score": 0.5597935318946838,
+          "relevance": 2
+        }
+      ]
+    },
+    {
+      "query_id": "q015",
+      "query": "English legal case documents suitable for evaluating semantic search",
+      "metrics": {
+        "ndcg_5": 0.6329267135510858,
+        "ndcg_10": 0.6179850633026517,
+        "precision_5": 0.6,
+        "precision_10": 0.4,
+        "recall_10": 0.5714285714285714,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "theresiavr/legalpincite",
+          "score": 0.6147476434707642,
+          "relevance": 2
+        },
+        {
+          "rank": 2,
+          "dataset_id": "SherlockRamos/jurisdb-legal-documents",
+          "score": 0.5742820501327515,
+          "relevance": 0
+        },
+        {
+          "rank": 3,
+          "dataset_id": "nguha/legalbench",
+          "score": 0.5460278391838074,
+          "relevance": 1
+        },
+        {
+          "rank": 4,
+          "dataset_id": "TryDotAtwo/legal-corpus-raw-batches",
+          "score": 0.5336454510688782,
+          "relevance": 1
+        },
+        {
+          "rank": 5,
+          "dataset_id": "Azzindani/Legal_Corpus_QA_SynDeepThink",
+          "score": 0.5273939371109009,
+          "relevance": 0
+        },
+        {
+          "rank": 6,
+          "dataset_id": "eduagarcia/LegalPT",
+          "score": 0.5175794959068298,
+          "relevance": 0
+        },
+        {
+          "rank": 7,
+          "dataset_id": "joelniklaus/Multi_Legal_Pile",
+          "score": 0.5132409930229187,
+          "relevance": 1
+        },
+        {
+          "rank": 8,
+          "dataset_id": "voilaj/swiss-caselaw",
+          "score": 0.5002751350402832,
+          "relevance": 0
+        },
+        {
+          "rank": 9,
+          "dataset_id": "LeadBHYT/bhyt-legal-docs",
+          "score": 0.47762182354927063,
+          "relevance": 0
+        },
+        {
+          "rank": 10,
+          "dataset_id": "th1nhng0/vietnamese-legal-documents",
+          "score": 0.47151780128479004,
+          "relevance": 0
+        }
+      ]
+    },
+    {
+      "query_id": "q016",
+      "query": "English medical image question-answering data suitable for training a multimodal model",
+      "metrics": {
+        "ndcg_5": 0.2802595260297114,
+        "ndcg_10": 0.5599600155880105,
+        "precision_5": 0.4,
+        "precision_10": 0.4,
+        "recall_10": 0.8,
+        "reciprocal_rank": 1.0
+      },
+      "top_results": [
+        {
+          "rank": 1,
+          "dataset_id": "openlifescienceai/medmcqa",
+          "score": 0.6195926666259766,
+          "relevance": 1
+        },
+        {
+          "rank": 2,
+          "dataset_id": "sentence-transformers/squad",
+          "score": 0.5646229386329651,
+          "relevance": 0
+        },
+        {
+          "rank": 3,
+          "dataset_id": "sentence-transformers/natural-questions",
+          "score": 0.5581744909286499,
+          "relevance": 0
+        },
+        {
+          "rank": 4,
+          "dataset_id": "allenai/qasc",
+          "score": 0.5566055774688721,
+          "relevance": 0
+        },
+        {
+          "rank": 5,
+          "dataset_id": "medalpaca/medical_meadow_medqa",
+          "score": 0.5294144749641418,
+          "relevance": 1
+        },
+        {
+          "rank": 6,
+          "dataset_id": "MIL-UT/Japanese-Medical-VQA-12m",
+          "score": 0.527529776096344,
+          "relevance": 2
+        },
+        {
+          "rank": 7,
+          "dataset_id": "derek-thomas/ScienceQA",
+          "score": 0.515259861946106,
+          "relevance": 0
+        },
+        {
+          "rank": 8,
+          "dataset_id": "keivalya/MedQuad-MedicalQnADataset",
+          "score": 0.5128491520881653,
+          "relevance": 1
+        },
+        {
+          "rank": 9,
+          "dataset_id": "allenai/openbookqa",
+          "score": 0.508281409740448,
+          "relevance": 0
+        },
+        {
+          "rank": 10,
+          "dataset_id": "google/boolq",
+          "score": 0.4920291304588318,
+          "relevance": 0
+        }
+      ]
+    }
+  ]
+}
