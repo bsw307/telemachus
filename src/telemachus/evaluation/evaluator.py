@@ -22,6 +22,7 @@ class EvaluationResult:
     precision_10: float
     recall_10: float
     reciprocal_rank: float
+    relevance: dict[str, int]
     top_results: list[ScoredDataset]
 
 
@@ -146,5 +147,6 @@ def evaluate_query(
         precision_10=precision_10,
         recall_10=recall_10,
         reciprocal_rank=rr,
-        top_results=scored_results
+        top_results=scored_results,
+        relevance=query_relevance
     )

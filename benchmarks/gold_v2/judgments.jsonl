@@ -221,6 +221,7 @@
 {"query_id": "q014", "dataset_id": "mteb/climate-fever", "relevance": 2}
 {"query_id": "q014", "dataset_id": "rabuahmad/climatecheck", "relevance": 2}
 {"query_id": "q014", "dataset_id": "rlacombe/ClimateNet", "relevance": 2}
+{"query_id": "q015", "dataset_id": "LeadBHYT/bhyt-legal-docs", "relevance": 0}
 {"query_id": "q014", "dataset_id": "tdiggelm/climate_fever", "relevance": 2}
 {"query_id": "q015", "dataset_id": "AI-team-UoA/greek_legal_code", "relevance": 0}
 {"query_id": "q015", "dataset_id": "Azzindani/Legal_Corpus_QA_SynDeepThink", "relevance": 0}
